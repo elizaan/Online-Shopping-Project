@@ -1,0 +1,7 @@
+--SELECT Prouduct_Id
+--from public."PRODUCT"
+--where Category IN(SELECT Category From public."GROUP" 
+				  
+SELECT "Product_Id",p."Category"
+FROM public."PRODUCT" p, public."GROUP" g
+WHERE p."Category" = g."Category"; 

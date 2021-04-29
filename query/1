@@ -1,0 +1,4 @@
+select P."Name", P."In Stock"
+from public."PRODUCT" P ,public."ORDER" O
+where O."Product_Id" in (select P."Product_Id" from public."PRODUCT" P
+where O."Product_Id" = P."Product_Id");

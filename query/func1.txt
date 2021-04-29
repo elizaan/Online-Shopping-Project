@@ -1,0 +1,22 @@
+declare
+	AMOUNT integer;
+	--i_s boolean;
+	--pro integer;
+BEGIN
+   SELECT P."In Stock"  ,P."Price" 
+   FROM public."PRODUCT" P
+   WHERE P."Product_Id" = PID;
+   
+   IF(P."In Stock" = TRUE) THEN
+   		AMOUNT = P."Price" + 60;
+		P."quantity" := P."quantity" - 1;
+		DBMS_OUTPUT.PUT_LINE('ORDER IS PLACED.');
+   		IF p."quantity" = 0 THEN
+			p."In Stock" = FALSE;
+		END IF
+	ELSE
+		DBMS_OUTPUT.PUT_LINE('Sorry! We are out of stock.');
+	END IF
+	RETURN AMOUNT;
+END;
+$AMOUNT$ LANGUAGE plpgsql;

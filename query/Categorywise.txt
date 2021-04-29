@@ -1,0 +1,9 @@
+SELECT "Name"
+FROM public."PRODUCT"
+WHERE "Category" IN (SELECT "Category" 
+               FROM public."PRODUCT"
+               GROUP BY "Category" HAVING "Category" IS NOT NULL)
+
+
+
+

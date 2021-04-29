@@ -1,0 +1,4 @@
+SELECT A."Admin_Name",g."Category"
+FROM public."ADMIN" A, public."GROUP" g
+WHERE A."Group_Id" = g."Group_Id";
+
